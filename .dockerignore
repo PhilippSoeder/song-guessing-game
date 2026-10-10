@@ -1,0 +1,12 @@
+.git
+.gitignore
+.dockerignore
+*.md
+*.log
+*.exe
+*.out
+qr-scanner
+song-guessing-game
+node_modules
+vendor
+.copilot-tracking

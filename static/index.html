@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Song Guessing Game</title>
+    <link rel="stylesheet" href="/static/css/styles.css?v=20261010-details" />
+</head>
+<body>
+    <article class="page">
+        <header>
+            <h1>Song Guessing Game</h1>
+        </header>
+
+        <section class="section" id="auth-section">
+            <form class="controls" action="/api/auth" method="get">
+                <button class="primary" type="submit">Authenticate with Spotify</button>
+            </form>
+            <div class="notice" id="ui-notice" style="display:none;"></div>
+        </section>
+
+        <section class="section" id="game-section" style="display:none;">
+            <button class="primary full-width" id="start-scan-btn" type="button">Start Scanning</button>
+            <div id="reader" style="display:none;margin-bottom:16px;"></div>
+
+            <div class="controls button-row" id="playback-controls" style="display:none;">
+                <button class="secondary half-width" id="play-pause-btn" disabled aria-label="Play pause">▶</button>
+                <button class="secondary half-width" id="restart-btn" disabled aria-label="Replay">↺</button>
+            </div>
+
+            <div class="controls" id="next-controls" style="display:none;margin-top:12px;">
+                <button class="primary full-width" id="next-btn" disabled>Next</button>
+            </div>
+
+            <div class="controls" id="reveal-controls" style="display:none;margin-top:12px;">
+                <button class="secondary full-width" id="reveal-btn" disabled>Reveal</button>
+            </div>
+
+            <div style="margin-top:18px;display:none;" id="track-info">
+                <div class="track-card card">
+                    <div class="detail-row">
+                        <strong>Song</strong>
+                        <span id="track-title" class="hidden">Hidden until reveal</span>
+                    </div>
+                    <div class="detail-row">
+                        <strong>Artist</strong>
+                        <span id="track-artist" class="hidden">Hidden until reveal</span>
+                    </div>
+                    <div class="detail-row">
+                        <strong>Album</strong>
+                        <span id="track-album" class="hidden">Hidden until reveal</span>
+                    </div>
+                    <div class="detail-row">
+                        <strong>Release</strong>
+                        <span id="track-release" class="hidden">Hidden until reveal</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </article>
+    <script defer src="/static/js/app.js?v=20261010-reveal-toggle"></script>
+</body>
+</html>
